@@ -4,6 +4,8 @@
 % consumption and savings with credit constraint
 % Written by Fedor Iskhakov, University of New South Wales, 2015
 
+addpath('utils')
+
 % Parameters
 EXPN=10         % Number of quadrature points to calculate expectation
 MMAX=10         % Maximum wealth

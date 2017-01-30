@@ -19,7 +19,7 @@ properties (Access=public)
 	df 			= 0.95	; %discount factor
 	sigma   = 0.25	; %sigma parameter in income shocks
 	duw     =	0.35	; %disutility of work
-	theta		= 1.95 		; %CRRA coefficient (log utility if ==1)
+	theta		= 1.95 	; %CRRA coefficient (log utility if ==1)
 	inc0		= 0.75	; %income equation: constant
 	inc1		= 0.04  ; %income equation: age coef
 	inc2		= 0.0002;	%income equation: age^2 coef
@@ -82,7 +82,10 @@ methods (Access=public)
 
 	%Solver EGM
 	function solve_dcegm(me)
-		%solve the model with EGM algorithm
+		%solve the model with DC-EGM algorithm
+		if me.lambda<eps & me.sigma>eps
+			error(sprintf('Solution for the model with income shocks but without taste shocks is not supported!\nCan not use quadrature to calculate expectations of discontinuous functions.\nSet lambda > 0 or sigma = 0'))
+		end
 		me.policy=polyline;%delete previous solution
 		me.value=polyline;%delete previous solution
 		% first solve the retiree problem
@@ -295,6 +298,9 @@ methods (Access=public)
 			what2plot='solution';
 		end
 		what2plot=strsplit(' ',lower(what2plot));%explode by space, convert to cell array
+		if strcmp(what2plot,' ') %correct for 2 versions of strsplit() around
+			what2plot=strsplit(lower(what2plot),' ');%explode by space, convert to cell array
+		end
 		if sum(ismember(what2plot,{'policy','solution','pol'}))>0
 			%plotting the policy functions
 			me.make_plot(me.policy,sprintf('%s: %s',me.label,'optimal consumption rules'));
