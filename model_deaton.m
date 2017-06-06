@@ -219,10 +219,7 @@ methods (Access=public)
 		if nargin<2
 			what2plot='solution';
 		end
-		what2plot=strsplit(' ',lower(what2plot));%explode by space, convert to cell array
-		if strcmp(what2plot,' ') %correct for 2 versions of strsplit() around
-			what2plot=strsplit(lower(what2plot),' ');%explode by space, convert to cell array
-		end
+		what2plot=strsplit(lower(what2plot),' ');%explode by space, convert to cell array
 		if sum(ismember(what2plot,{'policy','solution','pol'}))>0
 			%plotting the policy functions
 			if me.policy(1).len<1

@@ -1,7 +1,9 @@
 % Matlab class to implement a simple retirement model with consumption and savings,
 % income shocks and credit constraint
 % Written by Fedor Iskhakov, Australian National University, 2016
-% See Iskhakov, Jorgensen, Rust and Schjerning "The Endogenous Grid Method for Discrete-Continuous Dynamic Choice Models with (or without) Taste Shocks" (QE, 2017)
+% See Iskhakov, Jorgensen, Rust and Schjerning 
+% "The Endogenous Grid Method for Discrete-Continuous Dynamic Choice Models 
+%  with (or without) Taste Shocks" (QE, 2017)
 
 classdef model_retirement < handle
 % This class defines a Deaton consumption-savings model
@@ -297,10 +299,7 @@ methods (Access=public)
 		if nargin<2
 			what2plot='solution';
 		end
-		what2plot=strsplit(' ',lower(what2plot));%explode by space, convert to cell array
-		if strcmp(what2plot,' ') %correct for 2 versions of strsplit() around
-			what2plot=strsplit(lower(what2plot),' ');%explode by space, convert to cell array
-		end
+		what2plot=strsplit(lower(what2plot),' ');%explode by space, convert to cell array
 		if sum(ismember(what2plot,{'policy','solution','pol'}))>0
 			%plotting the policy functions
 			me.make_plot(me.policy,sprintf('%s: %s',me.label,'optimal consumption rules'));

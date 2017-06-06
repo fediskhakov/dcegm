@@ -1,4 +1,4 @@
-function parts = strsplit(splitstr, str, option)
+function parts = strsplit(str, splitstr, option)
 %STRSPLIT Split string into pieces.
 %
 %   STRSPLIT(SPLITSTR, STR, OPTION) splits the string STR at every occurrence
@@ -16,6 +16,8 @@ function parts = strsplit(splitstr, str, option)
 %   Time-stamp:  2004-09-22 08:48:01 +0200
 %   E-mail:      pjacklam@online.no
 %   URL:         http://home.online.no/~pjacklam
+
+%   CORRECTED ORDER OF ARGUMENTS
 
    nargsin = nargin;
    % error(nargchk(2, 3, nargsin));
