@@ -16,7 +16,7 @@ end
 
 %solve the model with EGM
 if 0
-  K=100;
+  K=1;
   fprintf('\nSolving %s with EGM %d times:\n',m.label,K)
   tic
   for i=1:K
@@ -30,16 +30,17 @@ end
 
 %simulate some data
 if 0
-  m.nsim=100;
+  m.solve_egm;
+  m.nsims=100;
   m.sim;
   m.sims
   m.plot('sim wealth0')
-  m.plot('sim consumption')
+  % m.plot('sim consumption')
 end
 %%
 
 %simulate flat consumption paths
-if 0
+if 1
   m.df=1/(1+m.r);
   m.sigma=0;
   m.init=[30 35];
@@ -78,7 +79,7 @@ end
 %%
 
 %% Retirement model with taste shocks
-if 1
+if 0
   m2.sigma=0.35;
   m2.lambda=0.2; %some EV taste shocks
   tic

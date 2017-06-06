@@ -195,7 +195,7 @@ methods (Access=public)
 		if nargin<2
 			what2plot='solution';
 		end
-		what2plot=strsplit(lower(what2plot),' ');%explode by space, convert to cell array
+		what2plot=strsplit0(lower(what2plot),' ');%explode by space, convert to cell array
 		if sum(ismember(what2plot,{'policy','solution','pol'}))>0
 			%plotting the policy functions
 			if me.policy(1).len<1
@@ -209,7 +209,7 @@ methods (Access=public)
 			box(ax,'on');
 			xlabel(ax,'Wealth','FontSize',14);
 			title(ax,sprintf('%s: %s',me.label,'optimal consumption rules'),'FontSize',14);
-		elseif sum(ismember(what2plot,{'value','value_function','val','valfunc'}))>0
+		elseif sum(ismember(what2plot,{'value','value_function','val','valfunc','vf'}))>0
 			%plotting value functions
 			if me.value(1).len<2
 				error 'Nothing to plot'

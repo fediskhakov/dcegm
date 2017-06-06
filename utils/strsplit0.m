@@ -1,5 +1,7 @@
-function parts = strsplit(str, splitstr, option)
+function parts = strsplit0(str,splitstr, option)
 %STRSPLIT Split string into pieces.
+%
+%   CHANGED ORDER OF INPUTS
 %
 %   STRSPLIT(SPLITSTR, STR, OPTION) splits the string STR at every occurrence
 %   of SPLITSTR and returns the result as a cell array of strings.  By default,
@@ -16,8 +18,6 @@ function parts = strsplit(str, splitstr, option)
 %   Time-stamp:  2004-09-22 08:48:01 +0200
 %   E-mail:      pjacklam@online.no
 %   URL:         http://home.online.no/~pjacklam
-
-%   CORRECTED ORDER OF ARGUMENTS
 
    nargsin = nargin;
    % error(nargchk(2, 3, nargsin));

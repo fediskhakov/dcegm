@@ -299,11 +299,11 @@ methods (Access=public)
 		if nargin<2
 			what2plot='solution';
 		end
-		what2plot=strsplit(lower(what2plot),' ');%explode by space, convert to cell array
+		what2plot=strsplit0(lower(what2plot),' ');%explode by space, convert to cell array
 		if sum(ismember(what2plot,{'policy','solution','pol'}))>0
 			%plotting the policy functions
 			me.make_plot(me.policy,sprintf('%s: %s',me.label,'optimal consumption rules'));
-		elseif sum(ismember(what2plot,{'value','value_function','val','valfunc'}))>0
+		elseif sum(ismember(what2plot,{'value','value_function','val','valfunc','vf'}))>0
 			%replace the analytical region with polylines
 			k=100;%points to be added in analytical region
 			[~,data]=me.value.chop(1); %through first points from all value functions
