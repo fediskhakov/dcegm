@@ -15,7 +15,10 @@ The code also contains the _easy start implementation of EGM_ algorithm in just 
 (http://www.sciencedirect.com/science/article/pii/S0165176505003368)" (Economics Letters, 2006)
 2. Iskhakov, Jorgensen, Rust and Schjerning 
 "[The Endogenous Grid Method for Discrete-Continuous Dynamic Choice Models with (or without) Taste Shocks]
-(https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2696079)" (Quantitative Economics, 2017)
+(http://onlinelibrary.wiley.com/doi/10.3982/QE643/full)" (Quantitative Economics, 2017)
+
+### Slides
+Lecture notes from the ZICE2017 lecture on DC-EGM https://dl.dropboxusercontent.com/u/17240700/sync4web/dcegm_zice2017.pdf
 
 ### Installation and running
 1. Make sure the files are in the Matlab work directory
