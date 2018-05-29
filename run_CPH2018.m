@@ -3,8 +3,8 @@ addpath('utils');
 
 m=model_deaton %create the model objects
 
-%solve the model with VFI
-if 0
+%% Solve the model with VFI
+if 1
   fprintf('\nSolving %s with value function iterations:\n',m.label)
   tic
   m.solve_vfi;
@@ -14,7 +14,7 @@ if 0
 end
 %%
 
-%solve the model with EGM
+%% Solve the model with EGM
 if 0
   K=1;
   fprintf('\nSolving %s with EGM %d times:\n',m.label,K)
@@ -28,7 +28,7 @@ if 0
 end
 %%
 
-%simulate some data
+%% Simulate some data
 if 0
   m.solve_egm;
   m.nsims=100;
@@ -39,8 +39,8 @@ if 0
 end
 %%
 
-%simulate flat consumption paths
-if 1
+%% Simulate flat consumption paths
+if 0
   m.df=1/(1+m.r);
   m.sigma=0;
   m.init=[30 35];
@@ -54,7 +54,6 @@ if 1
 end
 %%
 
-
 %% Flat simulated consumption path using retirement model without taste shocks
 if 0
   m2=model_retirement;
@@ -62,7 +61,7 @@ if 0
   m2.df=1/(1+m2.r); %flat consumption hopefully
   m2.sigma=0;
   m2.lambda=eps; %no EV taste shocks
-  m2.nsims=5;
+  m2.nsims=2;
   m2.init=[5 20];
   tic
   m2.solve_dcegm;
