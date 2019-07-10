@@ -4,7 +4,7 @@ addpath('utils');
 m=model_deaton %create the model objects
 
 %% Solve the model with VFI
-if 1
+if 0
   fprintf('\nSolving %s with value function iterations:\n',m.label)
   tic
   m.solve_vfi;
