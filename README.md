@@ -18,7 +18,7 @@ The code also contains the _easy start implementation of EGM_ algorithm in just 
 (http://onlinelibrary.wiley.com/doi/10.3982/QE643/full)" (Quantitative Economics, 2017)
 
 ### Slides
-Lecture notes from the ZICE2017 lecture on DC-EGM https://dl.dropboxusercontent.com/u/17240700/sync4web/dcegm_zice2017.pdf
+Lecture notes from the DSE2019 lecture on DC-EGM https://github.com/dseconf/DSE2019/blob/master/11_DCEGM_Iskhakov/slides/dcegm_DSE2019.pdf
 
 ### Installation and running
 1. Make sure the files are in the Matlab work directory
